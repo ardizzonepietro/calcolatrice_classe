@@ -18,7 +18,26 @@
     </br>   </br>
     <input id ="num2" type="number" name="numero2" placeholder="second number">
     </br>   </br>
-       
+    <script>
+     if(localStorage.length!=0){
+         for (let index = 0; index < array.length; index++) {
+        var table = document.getElementById('tab');
+        var a = localStorage.getItem(index);
+       let array = a.split("/");
+        var row = table.insertRow();
+var cell1 = row.insertCell();
+var cell2 = row.insertCell();
+var cell3 = row.insertCell();
+var cell4 = row.insertCell();
+cell1.innerHTML = array[0];
+cell2.innerHTML = array[1];
+cell3.innerHTML = array[2];  
+cell4.innerHTML = array[3];
+         }
+     }
+    
+    </script>
+
         
         <button id ="btn1" name="btn">+</button>
         <button id ="btn2" name="btn">-</button>
@@ -27,6 +46,7 @@
 
      
         <script src = https://code.jquery.com/jquery-3.6.0.min.js ></script>
+        
         <script src = es03.js></script>
     </body>
 </html>
