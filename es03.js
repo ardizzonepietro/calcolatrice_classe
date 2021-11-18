@@ -1,7 +1,12 @@
 
 
- var x =0;
 
+//localStorage.setItem("", "<tr><td>1</td><td style = 'text-align:center'>-</td><td>0</td><td>1</td></tr>");
+//console.log("nome: "+ localStorage.getItem("nome"));
+$('#tab').append(localStorage.getItem('tabella'));
+
+
+     var x=0;
 
     $("#btn1").click(function(){
         calcolo("+");
@@ -28,28 +33,36 @@
         case "+":
             cell4.innerHTML = n1+n2;
             risultato = n1+n2;
-            var riga = n1 +"/"+segno+"/"+n2+"/"+risultato;
-           localStorage.setItem(x, riga)
-            localStorage.setItem('n1', n1);
-            localStorage.setItem('n2', n2);
-            localStorage.setItem('segno', "+");
-            localStorage.setItem('risultato', risultato);
+           var String = "<tr><td>"+n1+"</td><td style = 'text-align:center'>+</td><td>"+n2+"</td><td>"+risultato+"</td></tr>";
+           var tab = localStorage.getItem("tabella");
+           localStorage.clear();
+           localStorage.setItem("tabella", tab+String);
+         
             cell2.innerHTML = "+";
         break;
         case "-":
             cell4.innerHTML = n1-n2;
+            risultato = n1-n2;
             cell2.innerHTML = "-";
-            localStorage.setItem('riga', n1, n2, segno, "-")
+            var String = "<tr><td>"+n1+"</td><td style = 'text-align:center'>-</td><td>"+n2+"</td><td>"+risultato+"</td></tr>";
+            var tab = localStorage.getItem("tabella");
+           localStorage.setItem("tabella", tab+String);
         break;
         case "*":
             cell4.innerHTML = n1*n2;
+            risultato = n1*n2;
             cell2.innerHTML = "*";
-            localStorage.setItem('riga', n1, n2, segno, "*")
+            var String = "<tr><td>"+n1+"</td><td style = 'text-align:center'>*</td><td>"+n2+"</td><td>"+risultato+"</td></tr>";
+            var tab = localStorage.getItem("tabella");
+            localStorage.setItem("tabella", tab+String);
         break;
         case "/":
             cell4.innerHTML = n1/n2;
+            risultato = n1/n2;
             cell2.innerHTML = "/";
-            localStorage.setItem('riga', n1, n2, segno, "/")
+            var String = "<tr><td>"+n1+"</td><td style = 'text-align:center'>/</td><td>"+n2+"</td><td>"+risultato+"</td></tr>";
+            var tab = localStorage.getItem("tabella");
+           localStorage.setItem("tabella", tab+String);
         break;
         
         }
@@ -68,40 +81,3 @@
                     calcolo("/");
 
                     });
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
- 
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                
-            
-
-      
